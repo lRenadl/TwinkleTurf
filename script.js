@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           
           alert(`Thank you for your feedback!\nActivity: ${activity}\nRating: ${rating} stars\nFeedback: ${feedback || "No feedback provided"}`);
-          window.location.href = 'index.html';
+          window.location.href = "index.html";
       });
   }
 });  // Properly closed here
