@@ -1,0 +1,2760 @@
+/* General settings */
+body {
+    font-family: Open Sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    overflow-x: hidden;
+    box-sizing: border-box;
+   background-image: url(images/background.jpeg);
+}
+
+
+body:not(.homepage).homepage-only{
+	display:none;
+}
+
+.review-tooltip {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 0.5em; /* 8px = 0.5em */
+	border: 0.0625em solid black;
+    padding: 1em; /* 16px = 1em */
+    font-size: 0.85em; /* No change, already in em */
+    max-width: 15.625em; /* 250px = 15.625em */
+    display: none;
+    pointer-events: none; /* So it doesn't interfere with mouse events */
+    z-index: 999;
+  }
+  
+  
+.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625em; /* 10px -> 0.625em */
+  margin: 1.25em; /* 20px -> 1.25em */
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.125em; /* 50px -> 3.125em */
+  height: 1.5em; /* 24px -> 1.5em */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 2.125em; /* 34px -> 2.125em */
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 1.125em; /* 18px -> 1.125em */
+  width: 1.125em; /* 18px -> 1.125em */
+  left: 0.1875em; /* 3px -> 0.1875em */
+  bottom: 0.1875em; /* 3px -> 0.1875em */
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #333;
+}
+
+input:checked + .slider::before {
+  transform: translateX(1.625em); /* 26px -> 1.625em */
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+#mode-label {
+  color: black; /* Default for light mode */
+  transition: color 0.3s ease;
+}
+
+/* When in dark mode */
+body.dark-mode #mode-label {
+  color: white;
+}
+
+/* Adjust size for smaller screens */
+@media (max-width: 768px) {
+  .switch {
+    width: 2.5em; /* Smaller width */
+    height: 1.25em; /* Smaller height */
+  }
+  
+  nav {
+    position: relative; /* Ensure that the menu is positioned relative to the switch */
+  }
+
+.switch-container {
+    position: absolute; /* Position it absolutely within the nav */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust the space from the right edge */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625em;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+  }
+
+
+  .slider::before {
+    height: 1em; /* Smaller knob */
+    width: 1em; /* Smaller knob */
+    left: 0.125em;
+    bottom: 0.125em;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(1.25em); /* Adjust the translation for smaller screens */
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #ddcac4; /* Dark brown background */
+    color: #f5f5f5; /* Light text */
+    background-image: none;
+}
+
+/* DARK MODE HEADER  */
+body.dark-mode header * {
+    background-color: #a28d86; /* Warm brown background */
+    color: #fff; /* Light text for contrast */
+}
+
+body.dark-mode .Breadcrumbs {
+    color: white; /* Change breadcrumb text color to white in dark mode */
+}
+
+body.dark-mode .Breadcrumbs a {
+    color: white; /* Change breadcrumb links to white in dark mode */
+}
+
+body.dark-mode .Breadcrumbs a:hover {
+    color: #B0C4DE; /* Lighter shade for hover in dark mode */
+}
+
+
+body.dark-mode .header-top {
+    background-color: #5c4033; /* Darker brown for top strip */
+    color: #fff;
+}
+
+
+body.dark-mode nav {
+    background-color: #a28d86;
+    color: #fff;
+}
+
+body.dark-mode ul li a {
+    color: #fff;
+}
+
+body.dark-mode ul li a:hover {
+    color: #f4e2d0; /* Lighter shade on hover */
+}
+
+body.dark-mode .checkbtn {
+    color: #f4e2d0;
+}
+
+body.dark-mode header img {
+    background: none; /* Remove any background that may be affecting the image */
+}
+
+
+/* Welcome Section */
+body.dark-mode .welcome-sectionH {
+    background-color: #756560;
+}
+
+body.dark-mode .welcome-text p {
+    color: #f0e6dc;
+}
+
+/* Activities Section */
+body.dark-mode .activitiesH {
+    background-color: #ddcac4;
+}
+
+body.dark-mode .activity-cardH {
+    background-color: #5c4537;
+    color: #f0e6dc;
+    box-shadow: 0px 0.25em 0.375em rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode #ac1 {
+    background: #caa99a;
+    border-top: 0.3125em solid #b59485;
+}
+
+body.dark-mode #ac2 {
+    background: #adc0b1;
+    border-top: 0.3125em solid #9cab9f;
+}
+
+body.dark-mode #ac3 {
+    background: #9f99be;
+    border-top: 0.3125em solid #8883a2;
+}
+
+body.dark-mode #ac4 {
+    background: #9285a0;
+    border-top: 0.3125em solid #726680;
+}
+
+body.dark-mode #ac5 {
+    background: #aa9096;
+    border-top: 0.3125em solid #896e74;
+}
+
+body.dark-mode #ac6 {
+    background: #acafbf;
+    border-top: 0.3125em solid #9598a7;
+}
+
+/* Review Section */
+body.dark-mode .reviews {
+    background-color: #ddcac4;
+}
+
+body.dark-mode .review-card {
+    background-color: #a8847a;
+    color: #f0e6dc;
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .stars-homepage {
+    color: #ffd700;
+}
+
+/* Tooltip */
+body.dark-mode .review-tooltip {
+  background-color: #70727b; /* medium gray */
+  border: 1px solid #aaa; /* lighter border for contrast */
+  color: #f5f5f5; /* light text */
+}
+
+
+/* Scrollbar styling for WebKit browsers */
+body.dark-mode ::-webkit-scrollbar {
+    width: 0.75em;
+    height: 0.75em;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #4b362d; /* darker brown background */
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background-color: #a5836a; /* lighter brown thumb */
+    border-radius: 0.625em;
+    border: 0.125em solid #4b362d;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background-color: #c8a888;
+}
+
+/* Dark Mode Footer */
+body.dark-mode .footer-container {
+    background-color: #624d46; /* rich brown */
+    color: #f3e6da;
+}
+
+body.dark-mode .footer-container div {
+    background-color: transparent;
+    color: #f3e6da;
+}
+
+body.dark-mode .copyright {
+    color: #d8c0af;
+}
+
+body.dark-mode .textfooter {
+    color: #f3e6da;
+}
+
+body.dark-mode .contact-us a {
+    color: #f3e6da;
+}
+
+body.dark-mode .logo img {
+    filter: brightness(0.85); /* Slightly darken the logo for dark mode */
+}
+
+body.dark-mode .footer-container hr {
+    border-color: #d8c0af;
+}
+
+body.dark-mode .social-media i,
+body.dark-mode .contact-us i {
+    color: #f3e6da;
+}
+
+/*Coach*/
+/* DARK MODE */
+body.dark-mode .firstInCoach {
+    background-color: #756560;
+    color: #f4e7d4;
+}
+
+body.dark-mode .coach-text h1 {
+    color:white;
+}
+
+body.dark-mode .coach-card {
+    background: #a38678;
+    border-color: #d5c0b6;
+    color: #896e74;
+}
+body.dark-mode .coach-card h3 {
+    color: #fcebd5; /* light */
+}
+
+body.dark-mode .coach-card p {
+    color: #e5d3bd; /* lighter */
+}
+
+body.dark-mode .scroll-content::-webkit-scrollbar-track {
+    background: #4b362d; /* Dark brown background */
+}
+
+body.dark-mode .scroll-content::-webkit-scrollbar-thumb {
+    background: #a5836a; /* Medium brown thumb */
+    border-radius: 0.625em; /* 10px */
+}
+
+body.dark-mode .scroll-content::-webkit-scrollbar-thumb:hover {
+    background: #c8a888; /* Lighter brown on hover */
+}
+
+
+
+/* Header Styles */
+header * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Open Sans, sans-serif;
+    font-size: 1em; /* Default font size */
+	background-color:#F5F5F5;
+}
+/* Header Top */
+.header-top {
+    background-color: #273f5b;
+    color: white;
+    text-align: center;
+    padding: 0.625em; /* 10px converted to em (assuming 16px base font-size) */
+    font-size: 1em; /* 16px converted to em */
+    font-weight: bold;
+}
+
+/* Navigation */
+/* Navigation */
+nav {
+    background-color: #f5f5f5;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Ensure logo stays on the left and menu on the right */
+    align-items: center;
+    padding: 0.625em 1.25em; /* 10px 20px converted to em */
+}
+
+/* Logo */
+.logo {
+    width: 5em; /* 80px converted to em */
+    height: 5.625em; /* 90px converted to em */
+    margin-right: 1.875em; /* 30px converted to em */
+}
+
+/* Navigation list */
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allow ul to take remaining space */
+    justify-content: flex-end; /* Align the navigation items to the right */
+}
+
+/* List items */
+ul li {
+    margin-right: 1.25em; /* 20px converted to em */
+}
+
+/* Link styling */
+ul li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Hover effect on links */
+ul li a:hover {
+    color: #483D8B;
+}
+
+/* Check button (for mobile) */
+.checkbtn {
+    font-size: 1.875em; /* 30px converted to em */
+    color: gray;
+    cursor: pointer;
+    display: none;
+}
+
+/* Hide the checkbox */
+#check {
+    display: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 48em) { /* 768px converted to em */
+    nav {
+        flex-direction: column; /* Stack logo and menu vertically */
+        align-items: flex-start; /* Align logo to the left */
+    }
+
+    .logo {
+margin-bottom: 1.25em; /* Space between logo and menu */
+        display: flex;
+        justify-content: center; /* Center logo horizontally */
+        width: 100%; /* Make the logo container full width */
+        text-align: center; /* Ensure content inside is centered */
+    }
+
+    .checkbtn {
+        display: block;
+        margin-right: 1.25em; /* Space between menu button and right edge */
+    }
+
+    ul {
+        position: fixed;
+        top: 5em; /* Adjust top value to match header size */
+        right: -100%;
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+    }
+
+    ul li {
+        margin: 1.25em 0; /* 20px converted to em */
+    }
+
+    ul li a {
+        font-size: 1.25em; /* 20px converted to em */
+    }
+	
+    #check:checked ~ ul {
+        right: 0;
+    }
+}
+
+
+/* Breadcrumb Styling */
+.Breadcrumbs {
+	color:gray;
+	margin-top:0;
+}
+
+.Breadcrumbs a{
+	margin-left:0.5em;
+    color:gray;
+    text-decoration:none;
+}
+
+.Breadcrumbs a:Hover{
+color:#483D8B;
+}
+
+
+
+/*START HOMEPAGE*/
+
+/* Welcome Section */
+.welcome-sectionH {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e8f3fc;
+}
+
+.welcome-image img {
+    max-width: 100%;
+    width: 28.125em; /* 450px converted to em */
+    height: auto;
+}
+
+.welcome-text {
+    width: 60%;
+    padding-left: 0.1em; 
+}
+
+.welcome-text p {
+    font-size: 1.25em; /* 20px converted to em */
+    color: black;
+}
+
+/* Mobile Welcome Section */
+@media screen and (orientation: portrait) {
+    .welcome-sectionH {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25em 0.625em; /* 20px 10px converted to em */		
+    }
+
+    .welcome-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .welcome-text {
+		padding-left:0.1em;
+        width: 100%;
+    }
+
+    .welcome-text p {
+        font-size: 0.625em; /* 10px converted to em */
+    }
+}
+
+/* Activity Section */
+.activitiesH {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.25em; /* 20px converted to em */
+    padding: 2.5em 5em; /* 40px 80px converted to em */
+}
+
+.activity-cardH {
+    padding: 1.25em; /* 20px converted to em */
+	border-radius: 0.5em; /* 8px converted to em */
+    box-shadow: 0px 0.25em 0.375em rgba(0, 0, 0, 0.1); /* 4px 6px converted to em */
+    text-align: center;
+}
+
+ #ac1{
+	background: #F0F8FF;
+	border-top: 0.3125em solid #B0C4DE;	
+}
+ #ac2{
+	background: #FFEFD5;
+	border-top: 0.3125em solid #FFE4B5;
+}
+ #ac3{
+	background: #FFE4E1;
+	border-top: 0.3125em solid #FFC0CB;	
+}
+ #ac4{
+	background: #E6E6FA;
+	border-top: 0.3125em solid #D8BFD8;	
+}
+ #ac5{
+	background: #F0FFF0;	
+	border-top: 0.3125em solid #66CDAA;	
+}
+ #ac6{
+	background: #FFFFF0;	
+	border-top: 0.3125em solid #FFE4C4;
+}
+
+.activity-cardH img {
+    width: 100%;
+    height: 9.375em; /* 150px converted to em */
+    border-radius: 0.3em; 
+    object-fit: cover;
+}
+
+.activity-cardH:hover {
+    transform: scale(1.03);
+}
+
+.stars-homepage {
+    color: gold;
+    font-size: 1.25em; /* 20px converted to em */
+}
+
+/* Reviews Section */
+.reviews {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25em; /* 20px converted to em */
+    padding: 2.5em 5em; /* 40px 80px converted to em */
+	overflow-x: auto;
+    scroll-snap-type: x mandatory;
+	margin-left:1.5em ;
+	scroll-padding: 2.5em;
+}
+
+.review-card {
+    flex: 0 0 auto;
+    width: 17.5em; /* 280px */
+	height:auto;
+    background-color: #f0f8ff;
+    border-radius: 0.625em;
+    padding: 1em; /* slightly increased */
+    scroll-snap-align: start;
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    font-size: 0.8125em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+
+.review-card:hover {
+    transform: scale(1.03);
+}
+
+.review-card img {
+    width: 100%;
+    height: 12.5em; /* 200px */
+    object-fit: cover;
+    border-radius: 0.5em; /* 8px */
+}
+
+/* Mobile Activity and Review Cards */
+@media (max-width: 37.5em) { /* 600px converted to em */
+    .activitiesH {
+        display: flex;
+        overflow-x: scroll;
+        padding: 1.25em;
+        gap: 0.625em; /* 10px converted to em */
+    }
+
+    .activity-cardH {
+        flex: 0 0 auto;
+        margin: 0.625em; /* 10px converted to em */
+        width: 12.5em; /* 200px converted to em */
+
+    }
+
+    .reviews {
+        display: flex;
+        overflow-x: scroll;
+        gap: 0.625em; /* 10px converted to em */
+        padding: 1.25em;
+    }
+
+    .review-card {
+        flex: 0 0 auto;
+        width: 12.5em; /* 200px converted to em */
+
+    }
+
+    .welcome-image img {
+        width: 100%;
+        max-width: 25em; /* 400px converted to em */
+    }
+
+    .welcome-text {
+        width: 100%;
+        padding: 0.625em; /* 10px converted to em */
+    }
+}
+
+/*END HOMEPAGE*/
+
+
+/* START Coach Page  */
+.firstInCoach {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #bddcf5;
+}
+
+.coach-text {
+	padding-left:1em;
+    width: 50%;
+}
+
+.coach-text h1 {
+    font-size: 2.5em; /* 40px converted to em */
+    color: #333;
+}
+
+.first-coach-image {
+    width: 50%;
+    display: flex;
+ }
+
+.first-coach-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Scroll Content */
+.scroll-content {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+    scrollbar-width: thin;
+}
+
+.scroll-content::-webkit-scrollbar {
+    height: 0.3125em; /* 5px converted to em */
+}
+
+.scroll-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.625em; /* 10px converted to em */
+}
+
+.scroll-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 0.625em; /* 10px converted to em */
+}
+
+.scroll-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.coach-card {
+    flex: 0 0 auto;
+    width: 15.625em; /* 250px converted to em */
+    height: auto; /* 300px converted to em */
+    margin: 0.5em 0.625em; /* 10px converted to em */
+    padding: 0.9375em; /* 15px converted to em */
+    background: #F8F8FF;
+    border-radius: 0.625em; /* 10px converted to em */
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1); /* 4px 6px converted to em */
+    text-align: center;
+	border-style:inset;
+	border-color:LightPink;
+}
+
+.coach-card:hover {
+    transform: scale(1.03);
+}
+
+.stars-coachpage {
+    color: gold;
+    font-size: 1.25em; /* 20px converted to em */
+}
+
+.coach-image {
+    width: 7.5em; /* 120px converted to em */
+    height: 7.5em; /* 120px converted to em */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 0.9375em; /* 15px converted to em */
+}
+
+.coach-card h3 {
+    font-size: 1.125em; /* 18px converted to em */
+    margin-bottom: 0.625em; /* 10px converted to em */
+}
+
+.coach-card p {
+    font-size: 0.875em; /* 14px converted to em */
+    color: #555;
+}
+
+/* Media query for small screens */
+@media (max-width: 37.5em) {
+	
+	.coach-card {
+        width: 12em; /* 192px converted to em, smaller card size */
+        height: 16em; /* 240px converted to em, smaller height */
+        padding: 0.75em; /* 12px converted to em */
+		margin-top:1em;
+    }
+
+    .coach-image {
+        width: 6em; /* 96px converted to em */
+        height: 6em; /* 96px converted to em */
+    }
+
+    .stars-coachpage {
+        font-size: 1em; /* Smaller font size for stars */
+    }
+
+    .coach-card h3 {
+        font-size: 1em; /* Smaller font size for the coach name */
+    }
+
+    .coach-card p {
+        font-size: 0.7em; /* Smaller font size for description */
+    }
+}
+
+
+/* Mobile Coach Section */
+@media screen and (orientation: portrait) {
+    .firstInCoach {
+        display: flex;
+        flex-direction: column;
+        padding: 1.25em 0.625em; /* 20px 10px converted to em */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .coach-text {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .coach-text h1 {
+        font-size: 1.375em; /* 22px converted to em */
+        margin-top: 0.625em; /* 10px converted to em */
+    }
+
+    .first-coach-image {
+        width: 100%;
+        margin-bottom: 1.25em; /* 20px converted to em */
+    }
+
+    .first-coach-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*END OF COACH*/
+
+
+/* START ACTIVITY */
+
+/* Grid layout for displaying activities */
+.activities-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.25em; 
+    padding: 2.5em 5em;
+    text-align: center;
+}
+
+.activity-card {
+    background: #ecf3fb;
+    border-radius: 0.9375em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s, background 0.3s;
+    overflow: hidden;
+    box-shadow: 0em 0.3125em 0.9375em rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+   
+	text-align:Center;
+}
+
+
+
+/* Hover effect */
+.activity-card:hover {
+    background: #c9c9c9;
+    transform: scale(1.05);
+}
+
+/* Image size inside the activity card */
+
+.activity-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 0.625em;
+}
+/* Activity name styling */
+.activity-card h3 {
+    margin: 0.625em ; 
+    font-size: 1.375em; 
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Show all details when hovering */
+.activity-details {
+    position: absolute;
+    background: rgba(36, 36, 36, 0.9);
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.9375em; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    overflow-y: auto;
+}
+
+/* Ensure all text is fully visible on hover */
+.activity-card:hover .activity-details {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Description formatting */
+.activity-details .description {
+    font-size: 0.75em; 
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.625em; 
+}
+
+/* Internal spacing for information */
+.activity-info {
+    font-size: 0.75em; 
+    text-align: center;
+    margin-top: 0.3125em; 
+}
+
+/* Coach and objective styling */
+.coach-objective {
+    font-size: 0.75em; 
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.3125em; 
+}
+
+/* Available Schedule styling */
+.schedule-title {
+    font-weight: bold;
+    font-size: 0.75em; 
+    margin-top: 0.625em; 
+}
+
+/* Improve schedule layout */
+.schedule-containerA {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em; 
+    justify-content: center;
+}
+
+.schedule-item {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.5em; 
+    border-radius: 0.3125em; 
+    color: white;
+    font-size: 0.75em; 
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+/* Improve contrast on hover */
+.schedule-item:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* END ACTIVITY */ 
+
+
+/* Register a New Kid Page */
+
+/* ترتيب النموذج والصورة */
+.form-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90em;
+    margin: auto;
+    margin-top: 5em;
+}
+
+/* نموذج التسجيل */
+.register-form {
+    display: flex;
+    justify-content: space-between;
+    width: 60em;
+    gap: 2em;
+    font-size: 0.8em;
+    margin-left: 2em;
+}
+
+/* تقسيم النموذج إلى قسمين */
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 27em;
+}
+
+/* تنسيق الحقول */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+    width: 100%;
+}
+
+.form-group label {
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+/* توحيد حجم مربعات الإدخال */
+.form-group input,
+.form-group select {
+    width: 20em;  /* ضبط العرض ليكون موحدًا */
+    height: 2.5em; /* توحيد الارتفاع */
+    padding: 0.5em;
+    border: 0.1em solid #ccc;
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    appearance: none;
+}
+
+/* تحميل الصورة */
+.photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 20em;
+    margin-right: 12em;
+}
+
+.photo-placeholder {
+    width: 12.5em;
+    height: 9.375em;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.photo-buttons {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.photo-btn, .add-kid {
+    width: auto;
+    padding: 0.7em 1.5em;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0.3em;
+}
+
+.terms {
+    margin-top: 4em;
+    text-align: left;
+    margin-left: 6em;
+    max-width: 70em;
+}
+
+.add-kid {
+    display: block;
+    margin: 0.625em 0;
+    padding: 0.625em 1.25em;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3em;
+    margin-top: 2em;
+    width: 25em;
+    height: 3em;
+}
+
+
+#gender {
+    width: 100%; /* اجعل العرض مماثلًا للحقول الأخرى */
+    height: 5em; /* 5px ≈ 5em عند مقارنة الحقول الأخرى */
+    border: 0.063em solid #ccc; /* 1px ≈ 0.063em */
+    border-radius: 0.313em; /* 5px ≈ 0.313em */
+    padding: 0.5em; /* أضف مسافة داخلية لتجنب التكبير */
+    font-size: 0.7em; /* ضبط حجم النص */
+    appearance: none; /* إزالة أسلوب المتصفح الافتراضي */
+    margin-left: 6em;
+}
+
+
+#dob {
+    width: 30em !important;  /* جعله متساويًا مع باقي الحقول */
+    height: 3.5em !important; /* نفس الارتفاع */
+    padding: 0.5em;
+    border: 0.1em solid #ccc;
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    appearance: none;
+    margin-right: 0.2em;
+    margin-left: 2.5em;
+}
+
+/* 📱 Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+        gap: 2em;
+    }
+
+    .register-form {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        gap: 1.5em;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        gap: 1em;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+    }
+
+    .photo-section {
+        margin: auto;
+        width: 100%;
+    }
+
+    .photo-placeholder {
+        width: 100%;
+        height: auto;
+    }
+
+    .photo-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .photo-btn,
+    .add-kid {
+        width: 100%;
+    }
+
+    .terms {
+        margin: 2em 1em;
+        max-width: 100%;
+    }
+
+    #gender,
+    #dob {
+        width: 100% !important;
+        margin-left: 0;
+    }
+}
+
+/* 💻 Tablet Devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .register-form {
+        flex-direction: column;
+        width: 90%;
+        margin-left: 0;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
+
+    .photo-section {
+        margin: 2em auto;
+        width: 90%;
+    }
+
+    .add-kid {
+        width: 100%;
+    }
+}
+
+/* 🌙 DARK MODE: Register a New Kid Page */
+body.dark-mode .form-container {
+    background-color: #ddcac4;
+    color: #4d2f1c;
+}
+
+body.dark-mode .register-form,
+body.dark-mode .left-section,
+body.dark-mode .right-section {
+    background-color: transparent;
+    color: #4d2f1c;
+}
+
+body.dark-mode .form-group label {
+    color: #4d2f1c;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode #gender,
+body.dark-mode #dob {
+    background-color: #333;
+    color: #888;
+    border: 1px solid #777;
+}
+
+body.dark-mode .photo-placeholder {
+    background: #555;
+    color: #4d2f1c;
+}
+
+body.dark-mode .photo-btn,
+body.dark-mode .add-kid {
+    background: #4d2f1c;
+    color: #000;
+    border: 1px solid #888;
+}
+
+body.dark-mode .terms {
+    color: #4d2f1c;
+}
+
+/* 🌙 DARK MODE: Fix white container background under the form */
+body.dark-mode main.container {
+    background-color: #ddcac4;  /* Match dark form color */
+    color: #4d2f1c;
+  }
+  
+
+
+/* End OF Register A NEW KID PAGE */ 
+
+/* START OF Parent PAGE */
+
+/* تخصيص الخلفية والإعدادات الخاصة بالنموذج */
+.parent-dashboard {
+    background-color: #e8f3fc; /* لون الخلفية */
+    padding: 1em 2em; /* مسافة داخلية */
+    border-radius: 2em; /* زيادة دائرية الحواف */
+    width: 60%; /* تصغير عرض المربع */
+    margin: 0 auto 0 25em; /* تحسين المسافات */
+    text-align: left;
+}
+
+/* تنسيق العنوان والنص */
+.parent-dashboard h1 {
+    font-size: 1.5em; /* تصغير حجم العنوان */
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.parent-dashboard p {
+    font-size: 1em;
+    max-width: 90%; /* تقليل العرض */
+    margin: auto;
+    line-height: 1.5;
+}
+
+/* تخصيص تنسيق قائمة الأطفال */
+.kids-list {
+    display: flex;
+    gap: 2em;
+    margin: 2em 1em;
+    align-items: flex-start;
+}
+
+/* تنسيق المعلومات عن الأطفال */
+.kid-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #e8f3fc;
+    padding: 1em;
+    border-radius: 0.5em;
+    width: 15.625em; /* 250px ≈ 15.625em */
+    margin-left: 2em;
+}
+
+
+.kid-info img {
+    width: 100%;
+    max-width: 12.5em;
+    height: auto;
+    border-radius: 0.5em;
+    margin-bottom: 0.625em;
+}
+
+/* إزالة المربع الخارجي حول الكروت */
+.kids-cards {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-top: 2.5em;
+    margin-left: 6.5em;
+}
+
+/* تنسيق بطاقات الأطفال */
+.kid-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1em;
+    border-radius: 0.7em;
+    border: 0.125em solid #e8f3fc;
+    gap: 2em;
+    width: 80%;
+    max-width: 50em;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+/* تأثير التمرير فوق بطاقة الطفل */
+.kid-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0em 0em 0.625em rgba(0, 0, 0, 0.2);
+}
+
+/* تخصيص النص داخل بطاقة الطفل */
+.kid-card p {
+    margin: 0 1em;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* تخصيص صورة الطفل */
+.kid-photo {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    border: 0.2em solid #ddd;
+}
+
+/* تخصيص قسم الأكشن */
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 4em;
+}
+
+.actions-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.action-card {
+    width: 20em;
+    height: 18em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 0.063em solid #ddd;
+    box-shadow: 0 0.125em 0.313em rgba(0, 0, 0, 0.1);
+    transition: transform 0.188s ease-in-out;
+}
+
+.action-card:hover {
+    transform: scale(1.05);
+}
+
+.action-card h2 {
+    font-size: 1.3em;
+    margin-top: 3.5em;
+}
+
+.action-card p {
+    font-size: 1em;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 1em;
+}
+
+/* تخصيص الزر Add */
+#Add {
+    padding: 0.3em 0.6em;
+    font-size: 0.9em;
+    width: 10em;
+    height: 2em;
+    border: 0.063em solid #ccc;
+    background-color: rgb(255, 252, 180);
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.7em;
+    margin-left: 55em;
+}
+
+/* تخصيص صورة الكارتون */
+#cartoon {
+    width: 35em;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+.kid-info img,
+.kid-photo,
+#cartoon {
+    max-width: 100%;
+    height: auto;
+}
+.kids-list,
+.actions-container {
+    flex-wrap: wrap;
+}
+
+
+/* تنسيق قائمة الأطفال */
+.kids-list em {
+    color: black;
+}
+
+.kids-list {
+    color: gray;
+}
+
+/* تخصيص زر الفرز */
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 1.5em 0 0 1em;
+    flex-wrap: wrap;
+}
+
+.sort-container label {
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+}
+
+.sort-container select {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 0.063em solid #ccc;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: rgb(248, 255, 249);
+}
+
+
+/* تخصيص الأزرار */
+.button-link {
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    background: rgb(255, 252, 180);
+    color: black;
+    text-align: center;
+    border-radius: 0.3em;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* 📱 Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .parent-dashboard {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .kids-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kid-info, .kid-card {
+        width: 90%;
+        margin: auto;
+    }
+
+    .kids-cards {
+        margin-left: 0;
+        align-items: center;
+    }
+
+    
+
+    .actions-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+
+    #Add {
+        margin-left: 0;
+        margin: 1em auto;
+    }
+
+    #cartoon {
+        width: 100%;
+    }
+}
+
+/* 💻 Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .kids-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .actions-container {
+        flex-direction: column;
+    }
+
+    .kid-card {
+        width: 95%;
+    }
+
+    .parent-dashboard {
+        margin-left: 0;
+    }
+}
+@media (max-width: 768px) {
+    .sort-container {
+        margin: 1em auto;
+        justify-content: center;
+    }
+
+    #Add {
+        margin: 1em auto;
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .actions-section {
+      flex-direction: column;
+      gap: 1em;
+    }
+  
+    .action-card {
+      width: 90%;
+      max-width: none;
+    }
+  }
+  
+
+
+/* 🌙 DARK MODE: Parent Dashboard Cards */
+body.dark-mode .parent-dashboard {
+    background-color: #d8c0af;
+    color: #f5f5f5;
+  }
+  
+  body.dark-mode .kid-info {
+    background-color: #d8c0af;
+    border: 1px solid #a28d86;
+    color: #fff;
+  }
+  
+  body.dark-mode .kid-card {
+    background-color: #d8c0af;
+    border: 0.125em solid #8c7263;
+    color: #f5f5f5;
+    box-shadow: 0 0 0.625em rgba(255, 255, 255, 0.05);
+  }
+  
+  body.dark-mode .kid-card p {
+    color: #f0e6dc;
+  }
+  
+  body.dark-mode .kid-photo {
+    border: 0.2em solid #aaa;
+  }
+  
+  body.dark-mode .action-card {
+    background-color: #d8c0af;
+    border: 1px solid #a38b7f;
+    color: #f0e6dc;
+  }
+  
+  body.dark-mode .sort-container label {
+    color: #f5f5f5;
+  }
+  
+  body.dark-mode .sort-container select {
+    background-color: #444;
+    color: white;
+    border: 1px solid #aaa;
+  }
+  
+/* 🌙 DARK MODE: Buttons */
+body.dark-mode .button-link {
+    background: #d1b167;   /* A softer golden tone for contrast */
+    color: #000;
+    border: 1px solid #aaa;
+}
+body.dark-mode #Add {
+    padding: 0.3em 0.6em;
+    font-size: 0.9em;
+    width: 10em;
+    height: 2em;
+    border: 0.063em solid #ccc;
+    background-color: #d1b167;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.7em;
+    margin-left: 55em;
+}
+
+/* End OF Parent PAGE */
+
+
+
+
+/* START ACTIVITY ENROLLMENT */
+
+/* Enrollment Form */
+.enrollment-form {
+    text-align: center;
+    margin-bottom: 1.875em; 
+}
+
+label {
+    font-style: italic;
+    font-size: 1.25em; 
+}
+
+.enrollment-form select {
+    padding: 0.625em; 
+    margin: 0.625em; 
+    border: 0.063em solid #212221; 
+    border-radius: 0.313em; 
+    font-size: 1.125em; 
+    background-color: rgb(248, 255, 249);
+    width: 25%;
+}
+
+/* Activities Container */
+.activitiess-container {
+    display: flex;
+    justify-content: center;
+    padding: 1.25em; 
+}
+
+.scroll-container {
+    display: flex;
+    gap: 2.188em; 
+    overflow-x: auto;
+    padding-bottom: 0.625em; 
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 0.313em; 
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #5b5b5b;
+    border-radius: 0.313em; 
+}
+
+/* Activity Cards */
+.activity-cardE {
+    background: rgb(241, 255, 249);
+    padding: 0.938em; 
+    border-radius: 0.5em; 
+    box-shadow: 0px 0px 0.313em rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 15.625em; 
+    min-width: 15.625em; 
+}
+
+.activity-cardE img {
+    width: 100%;
+    height: 10.625em; 
+    border-radius: 0.625em; 
+    object-fit: cover;
+}
+
+/* Rating (Stars) */
+.rating {
+    font-size: 1.125em; 
+    color: gold;
+    margin-bottom: 0.313em; 
+}
+
+/* Enrollment Button */
+.enroll-btn {
+    display: block;
+    margin: 1.25em auto; 
+    padding: 0.75em 1.563em; 
+    background-color: rgb(255, 252, 180);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.313em; 
+    font-size: 1.063em; 
+    transition: 0.3s;
+}
+
+.enroll-btn:hover {
+    background-color: #333;
+}
+
+
+/* END ACTIVITY ENROLLMENT */
+
+
+.container {
+    width: 90%;
+    max-width: 100%;
+    margin: 1.25em auto;
+    background: white;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 1em;
+    }
+}
+
+
+  /* Dropdown */
+.activity-dropdown {
+    width: 100%;
+    padding: 0.5em; /* 8px converted to em */
+    font-size: 1em; /* 16px converted to em */
+    border: 0.0663em solid #212221; /* 1px converted to em */
+    border-radius: 0.3125em; /* 5px converted to em */
+    background-color: rgb(248, 255, 249);
+}
+
+  /* Activity Image */
+  .activity-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.625em 0;
+}
+
+.activity-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.3125em;
+}
+
+
+.activity-image img {
+    width: auto;
+    height: auto;
+    border-radius: 0.3125em; /* 5px converted to em */
+}
+
+  /* Rating */
+.rating-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625em; /* 10px converted to em */
+}
+
+.user-icon {
+    width: 1.875em; /* 30px converted to em */
+    height: 1.875em; /* 30px converted to em */
+    border-radius: 50%;
+    margin-right: 0.625em; /* 10px converted to em */
+}
+
+.rating-stars {
+    display: flex;
+    gap: 0.3125em; /* 5px converted to em */
+    margin-left: 0.625em; /* 10px converted to em */
+}
+
+/* Rating Stars */
+.star {
+    font-size: 1.5em;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Color based on rating value */
+.star.active.rating-1 { color: #ff0000; } /* Red */
+.star.active.rating-2 { color: #f78c44; } /* Orange */
+.star.active.rating-3 { color: #ffd700; } /* Yellow */
+.star.active.rating-4 { color: #9acd32; } /* Yellow-green */
+.star.active.rating-5 { color: #4CAF50; } /* Green */
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+  /* Text Area */
+textarea {
+    width: 100%;
+    height: 9.375em; /* 150px converted to em */
+    border: 0.0625em solid #ccc; /* 1px converted to em */
+    border-radius: 0.3125em; /* 5px converted to em */
+    padding: 0.625em; /* 10px converted to em */
+    font-size: 0.875em; /* 14px converted to em */
+}
+
+  /* Submit Button */
+.Submit-button {
+    background-color: rgb(255, 252, 180);
+    color:black;
+    padding: 0.625em 1.25em; /* 10px 20px converted to em */
+    border: none;
+    border-radius: 0.3125em; /* 5px converted to em */
+    cursor: pointer;
+    margin-top: 0.625em; /* 10px converted to em */
+    margin-bottom: 0.5em;
+}
+
+.Submit-button:hover {
+    background-color: #444;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1em;
+        margin: 1em auto;
+    }
+
+    .activity-dropdown {
+        font-size: 0.9em;
+    }
+
+    .rating-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .rating-stars {
+        margin-left: 0;
+        margin-top: 0.5em;
+    }
+
+    .star {
+        font-size: 1.3em;
+    }
+
+    textarea {
+        height: 7em;
+    }
+
+    .Submit-button {
+        width: 100%;
+        padding: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .page-title {
+        font-size: 1.2em;
+    }
+
+    .activity-dropdown {
+        font-size: 0.8em;
+    }
+
+    .activity-image img {
+        max-width: 90%;
+    }
+
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .star {
+        font-size: 1.1em;
+    }
+
+    textarea {
+        font-size: 0.8em;
+        height: 5em;
+    }
+
+    .Submit-button {
+        font-size: 0.9em;
+    }}
+
+
+
+/* Schedule Section */
+.current-day td:first-child {
+    background-color: #f4e9e9 !important;
+    color: #101a24;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Optional: Add a subtle indicator */
+.current-day td:first-child::before {
+    content: "•";
+    color: #708090;
+    margin-right: 8px;
+}
+
+
+.week-date {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em; /* 17.6px */
+    margin: 1em 0;
+    color: #2c3e50;
+    padding: 0.8em;
+    background-color: #b6bfb887;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%
+    
+}
+.schedule-container {
+    box-sizing: border-box;
+    width: 90%;
+    margin: 1.25em auto; /* 20px converted to em */
+    background: white;
+    padding: 1.25em; /* 20px converted to em */
+    border-radius: 0.5em; /* 8px converted to em */
+    box-shadow: 0em 0.4em 0.9em rgba(0, 0, 0, 0.1); /* 4px 6px converted to em */
+    max-width: 100%
+}
+
+.schedule-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Responsive Table */
+.table-container {
+    overflow-x: auto;
+    z-index: 1;
+ 
+}
+
+/* Schedule Table */
+.schedule-table {
+    width: 100%;
+    min-width: 37.5em; /* 600px converted to em */
+    border-collapse: collapse;
+    z-index: 1;
+    min-width: 0; /* Override default table behavior */
+    table-layout: fixed; 
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 0.19em solid #ddd; /* 1px converted to em */
+    padding: 0.625em; /* 10px converted to em */
+    text-align: center;
+    font-size: 1em; /* 16px converted to em */
+    position: relative;
+}
+
+/* Table Header */
+.schedule-table th {
+    background-color: #708090;
+    color: white;
+}
+
+/* Unavailable (Blocked) Cells */
+.unavailable {
+    background-color: #48474924 ;
+    
+}
+
+/* Activity Box (Floating Rectangle) */
+.activity-box {
+    
+    background-color: #faf3e0;
+    border: 0.0625em solid hsl(212, 45%, 28%); /* 1px converted to em */
+    padding: 0.3125em 0.625em; /* 5px 10px converted to em */
+    border-radius: 0.25em; /* 4px converted to em */
+    font-size: 0.875em; /* 14px converted to em */
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    min-height: 3.125em; 
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    box-shadow: 0em 0.0625em 0.1875em rgba(0, 0, 0, 0.1); /* 1px 3px converted to em */
+}
+
+/* Activity Spanning Multiple Cells */
+.span-2 {
+    height: 200%;
+}
+
+.span-3 {
+    height: 300%;
+}
+.coach-info {
+    display: flex;          /* Align avatar and name horizontally */
+    align-items: center;    /* Vertically center items */
+    gap: 0.625em;           /* 10px converted to em */
+    margin-bottom: 1.25em;  /* 20px converted to em */
+    margin-left: 2em;
+}
+
+.coach-avatar img {
+    width: 3.75em;          /* 60px converted to em */
+    height: 3.75em;         /* 60px converted to em */
+    border-radius: 50%;     /* Circular image */
+    object-fit: cover;      /* Crops image to fill the container */
+}
+
+.coach-info h2 {
+    font-size: 1.5em;       /* 24px converted to em */
+    margin: 0;              /* Remove default heading margin */
+    color: #333;            /* Dark gray text color */
+}
+/* Responsive Design */
+/* Add these media queries at the end of your existing CSS */
+
+@media screen and (max-width: 768px) {
+    body.menu-open {
+        overflow: hidden;
+    }
+    .schedule-container {
+        width: 95%;
+        padding: 1em;
+        margin: 1em auto;
+    }
+
+    .schedule-table {
+        min-width: 35em; /* Slightly smaller minimum width */
+    }
+
+    .coach-info {
+        margin-left: 1em;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .coach-avatar img {
+        width: 3em;
+        height: 3em;
+    }
+
+    .coach-info h2 {
+        font-size: 1.3em;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.5em;
+        font-size: 0.9em;
+    }
+
+    .activity-box {
+        font-size: 0.8em;
+        padding: 0.25em 0.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .schedule-container {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0.5em auto;
+    }
+
+    .schedule-table {
+        min-width: 30em; /* Smaller minimum width for very small screens */
+    }
+
+    .week-date {
+        font-size: 1em;
+        margin: 0.5em 0;
+    }
+
+    .coach-info {
+        margin-left: 0.5em;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 0.8em;
+        padding: 0.4em;
+    }
+
+    .activity-box {
+        font-size: 0.75em;
+        width: 90%;
+    }
+
+    .span-2,
+    .span-3 {
+        height: auto; /* Adjust for mobile height needs */
+    }
+}
+body.dark-mode .week-date {
+    background-color: #d1b167 !important;
+    color: #222 !important;
+}
+
+/* Unavailable time slots */
+body.dark-mode td.unavailable {
+    background-color: #6c6b6b !important;
+    color: #d5d8d2 !important;
+}
+
+nav {
+    position: relative;
+    z-index: 1000; /* Ensure it's above other content */
+}
+/* Activity boxes inside table cells */
+body.dark-mode .day-name {
+    background-color: #2c3e50 !important;
+    color: #fff !important;
+}
+
+/* Activity box inside schedule table (lighter than unavailable) */
+body.dark-mode .schedule-table td .activity-box {
+    background-color: #5c4537 !important;
+    border-color: #997373 !important;
+    color: #f6efe9 !important;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Container Dark */
+body.dark-mode .container,
+body.dark-mode .schedule-container {
+    background-color: #1e1e1e88;
+    box-shadow: 0 0.3em 0.6em rgba(255, 255, 255, 0.05);
+}
+
+/* Table Dark */
+body.dark-mode .schedule-table th {
+    background-color: #2c3e50;
+}
+
+body.dark-mode .schedule-table td {
+    border-color: #9c9191;
+    background-color: #f4e2d07e;
+}
+
+/* Rating Stars */
+body.dark-mode .star {
+    color: #555;
+}
+
+body.dark-mode .star.active.rating-1 { color: #ff6b6b; }
+body.dark-mode .star.active.rating-2 { color: #ffa94d; }
+body.dark-mode .star.active.rating-3 { color: #ffe066; }
+body.dark-mode .star.active.rating-4 { color: #b2f2bb; }
+body.dark-mode .star.active.rating-5 { color: #69db7c; }
+
+/* Dropdown */
+body.dark-mode .activity-dropdown {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border-color: #444;
+}
+
+/* Textarea */
+body.dark-mode textarea {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border-color: #555;
+}
+
+/* Submit Button */
+body.dark-mode .Submit-button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .Submit-button:hover {
+    background-color: #555;
+}
+
+/* Other elements */
+body.dark-mode .week-date {
+    background-color: #2f4f4f;
+    color: #eee;
+}
+
+body.dark-mode .activity-box {
+    background-color: #2c2c2c;
+    border-color: #666;
+    color: #fff;
+}
+/* START OD ADMIN PAGE */
+/* START OF ADMIN PAGE */
+.admin {
+    padding: 1.25em;
+    max-width: 75em;
+    margin: auto;
+}
+.coach-link {
+    text-decoration: underline;
+}
+
+.profile-section {
+    background: #F0F8FF;
+    padding: 2em;
+    border-radius: 0.5em;
+    text-align: center;
+    margin-bottom: 1.25em;
+}
+
+.profile-img img {
+    width: 6.25em;
+    height: 6.25em;
+    border-radius: 50%;
+    border: 0.125em solid #ddd;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625em;
+    font-size: 1.125em;
+}
+
+.profile-info p {
+    margin: 0.3125em 0;
+    font-weight: bold;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+}
+
+.dashboard-box {
+    background: white;
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+summary {
+    background: #ffffff;
+    padding: 0.75em;
+    border-radius: 0.375em;
+    font-size: 1.25em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 0.625em;
+    transition: background 0.3s ease;
+    list-style: none;
+}
+
+summary:hover {
+    background: #c2c2c2;
+}
+
+summary img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.list-content {
+    padding: 0.625em;
+    background: #f8f8f8;
+    border-radius: 0.375em;
+}
+
+.list-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625em;
+}
+
+.list-content ul li {
+    background: #ffffff;
+    padding: 0.625em;
+    border-radius: 0.3125em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: left;
+    border: 0.0625em solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+/* Example color‐coding, adjust as needed */
+#box1 {
+    background: #F0FFF0;
+}
+#box2 {
+    background: #FFEFD5;
+}
+#box3 {
+    background: #FFE4E1;
+}
+
+@media (max-width: 48em) {
+    .admin {
+        padding: 0.625em;
+        max-width: 100%;
+    }
+
+    .profile-img img {
+        width: 5em;
+        height: 5em;
+    }
+
+    .profile-info {
+        font-size: 1em;
+    }
+
+    .dashboard-container {
+        gap: 1em;
+    }
+
+    .dashboard-box {
+        padding: 0.75em;
+    }
+
+    summary {
+        font-size: 1.125em;
+    }
+
+    summary img {
+        width: 1.25em;
+        height: 1.25em;
+    }
+
+    .list-content ul li {
+        font-size: 0.875em;
+        padding: 0.5em;
+    }
+}
+
+@media (max-width: 64em) {
+    .admin {
+        padding: 0.9375em;
+    }
+
+    .dashboard-box {
+        padding: 0.75em;
+    }
+
+    summary {
+        font-size: 1.2em;
+    }
+
+    .list-content ul li {
+        font-size: 0.9375em;
+        padding: 0.5625em;
+    }
+}
+/* END OF ADMIN PAGE */
+
+
+/* ——— More/Less toggle ——— */
+#kids-list li.extra {
+  display: none;    /* hide extra names by default */
+}
+
+#toggle-kids {
+  margin-top: 0.5em;
+  background: none;
+  border: none;
+  color: #007BFF;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: underline;
+}
+#toggle-kids:hover {
+  color: #0056b3;
+}
+
+
+/* dark mode Admin page */
+/* Activate Dark Mode */
+body.dark-mode {
+  font-family: Open Sans, sans-serif;
+  background-color: #ddcac4;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Admin container */
+body.dark-mode .admin {
+  padding: 1.25em;
+  max-width: 75em;
+  margin: auto;
+}
+
+/* Profile section */
+body.dark-mode .profile-section {
+  background-color: #756560;
+  padding: 2em;
+  border-radius: 0.5em;
+  text-align: center;
+  margin-bottom: 1.25em;
+}
+body.dark-mode .profile-img img {
+  width: 6.25em;
+  height: 6.25em;
+  border-radius: 50%;
+  border: 0.125em solid #ddd;
+}
+body.dark-mode .profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625em;
+  font-size: 1.125em;
+}
+body.dark-mode .profile-info p {
+  margin: 0.3125em 0;
+  font-weight: bold;
+}
+
+/* Dashboard boxes */
+body.dark-mode .dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+body.dark-mode .dashboard-box {
+  background-color: #5c4537;
+  color: #f0e6dc;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0.25em 0.375em rgba(0,0,0,0.3);
+  width: 100%;
+}
+
+/* <details>/<summary> */
+body.dark-mode summary {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+  padding: 0.75em;
+  border-radius: 0.375em;
+  font-size: 1.25em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  list-style: none;
+}
+body.dark-mode summary:hover {
+  background-color: #3a3a3a;
+}
+body.dark-mode summary img {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* List content */
+body.dark-mode .list-content {
+  background-color: #2a2a2a;
+  padding: 0.625em;
+  border-radius: 0.375em;
+}
+body.dark-mode .list-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+}
+body.dark-mode .list-content ul li {
+  background-color: #333;
+  color: #f5f5f5;
+  padding: 0.625em;
+  border-radius: 0.3125em;
+  border: 0.0625em solid #444;
+  display: flex;
+  align-items: center;
+}
+
+/* Color‐coding boxes */
+body.dark-mode #box1 { background-color: #caa99a; }
+body.dark-mode #box2 { background-color: #adc0b1; }
+body.dark-mode #box3 { background-color: #9f99be; }
+
+/* More/Less toggle */
+body.dark-mode #kids-list li.extra {
+  display: none;
+}
+body.dark-mode #toggle-kids {
+  margin-top: 0.5em;
+  background: none;
+  border: none;
+  color: #ffd700;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: underline;
+}
+body.dark-mode #toggle-kids:hover {
+  color: #f4e2d0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 64em) {
+  body.dark-mode .admin {
+    padding: 0.9375em;
+  }
+  body.dark-mode .dashboard-box {
+    padding: 0.75em;
+  }
+  body.dark-mode summary {
+    font-size: 1.2em;
+  }
+  body.dark-mode .list-content ul li {
+    font-size: 0.9375em;
+    padding: 0.5625em;
+  }
+}
+@media (max-width: 48em) {
+  body.dark-mode .admin {
+    padding: 0.625em;
+    max-width: 100%;
+  }
+  body.dark-mode .profile-img img {
+    width: 5em;
+    height: 5em;
+  }
+  body.dark-mode .profile-info {
+    font-size: 1em;
+  }
+  body.dark-mode .dashboard-container {
+    gap: 1em;
+  }
+  body.dark-mode .dashboard-box {
+    padding: 0.75em;
+  }
+  body.dark-mode summary {
+    font-size: 1.125em;
+  }
+  body.dark-mode summary img {
+    width: 1.25em;
+    height: 1.25em;
+  }
+  body.dark-mode .list-content ul li {
+    font-size: 0.875em;
+    padding: 0.5em;
+  }
+}
+
+
+/* END OF ADMIN PAGE */
+
+
+
+
+/* Footer Styles */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #273f5b;
+    color: white;
+    position: relative;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+	Padding:2em;
+	width:100%;
+	overflow: hidden;
+	margin-top:4em;
+}
+
+/* Copyright at Top Left */
+.copyright {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+/* Main Footer Layout */
+.footer-container div {
+    flex: 0 1 auto;
+    min-width: 17.5em;
+	Padding:0.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+hr {
+    width: 80%;
+    border: 0.031em solid white;
+    margin: 0.625em 0;
+}
+
+
+.logo img {
+    max-width: 7.5em; /* Default size for laptop */
+    display: block;
+    margin: 0 auto 0.625em;
+}
+
+.social-media i, .contact-us i {
+    font-size: 1.2em;
+}
+
+.contact-us a{
+	color:white;
+}
+
+/* Positioning .textfooter at the bottom-left of the footer */
+.textfooter {
+    font-size: 1em;
+    order: 1;
+    bottom: 0em; /* Distance from the bottom */
+    left: 1em; /* Distance from the left */
+    text-align: left;	
+}
+
+	@media screen and (max-width: 48em) {
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+		Padding:0em;
+		align-items:Center;
+    }
+    
+    .copyright {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .textfooter {
+        text-align: center;
+        width: 100%;
+        order: 3;
+		margin-top:-1em;
+        font-size: 0.8em; /* Even smaller on mobile */
+    }
+    
+    .social-media, .contact-us {
+        flex-direction: row;
+        justify-content:Center;
+        flex-wrap: nowrap;
+        display: flex;
+        text-align:Center;
+		font-size: 0.8em;
+		margin-top:1em;
+    }
+
+    .social-media i, .contact-us i {
+		Padding:1.8em;
+		flex-direction:column;
+    }
+		
+	
+	.linebrak{
+		display:none;
+	}
+ 
+	.fa-solid fa-phone{
+		flex-wrap:wrap;
+	}
+	.fa-solid fa-envelope{
+		flex-wrap:wrap;
+	}
+	.fa-solid fa-location-dot{
+		flex-wrap:wrap;		
+	}
+	
+	.logo{
+		order:2;
+	}
+}
