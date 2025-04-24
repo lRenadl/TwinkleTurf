@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- English and Arabic letters -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- To work on phones too -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"><!-- for the same font used in wireframe -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><!-- For icons -->
+  <title>TwinkerTurf - Admin Page</title>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      TwinkerTurf! Where Kids Play, Grow, and Thrive!
+    </div>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">
+        <img src="images/logo.png" alt="TwinkerTurf Logo" style="width: 110px;">
+      </label>
+      <ul>
+        <li><a href="index.html" accesskey="h" title="Alt + H">Home</a></li>
+        <li><a href="Activity.html" accesskey="a" title="Alt + A">Activities</a></li>
+        <li><a href="Coaches.html" accesskey="c" title="Alt + C">Coaches</a></li>
+        <li><a href="Admin.html" accesskey="d" title="Alt + D">Administrator dashboard</a></li>
+        <li><a href="parentPage.html" accesskey="p" title="Alt + P">Parent dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <p class="Breadcrumbs">
+    <a href="index.html">Home</a> &gt;
+    <a href="Administrator.html">Administrator dashboard</a>
+  </p>
+
+  <div class="container">
+    <main class="admin">
+      <!-- Admin Profile Section -->
+      <section class="profile-section">
+        <div class="profile-img">
+          <img src="images/AdminPic.png" alt="Admin Profile">
+        </div>
+        <div class="profile-info">
+          <p><strong>Full Name:</strong> <span>Abdullah Abdulaziz</span></p>
+          <p><strong>Age:</strong> <span>35</span></p>
+        </div>
+        <div class="profile-info">
+          <p><strong>Zip Code:</strong> <span>12345</span></p>
+          <p><strong>Phone Number:</strong> <span>+96650012345</span></p>
+        </div>
+      </section>
+
+      <div class="dashboard-container">
+        <!-- Kids section -->
+        <section class="dashboard-box">
+          <details>
+            <summary>
+              <img src="images/kids.png" alt="Kids Icon"> Kids Overview ▼
+            </summary>
+            <div class="list-content">
+              <ul id="kids-list">
+                <li>Ali Ahmed</li>
+                <li>Sara Khalid</li>
+                <li>Yousef Abdullah</li>
+                <li class="extra">Reem Adel</li>
+                <li class="extra">Omar Saad</li>
+              </ul>
+              <button id="toggle-kids">More</button>
+            </div>
+          </details>
+        </section>
+
+        <!-- Activities section -->
+        <section class="dashboard-box">
+          <details>
+            <summary>
+              <img src="images/activity.png" alt="Activities Icon"> Activities Overview ▼
+            </summary>
+            <div class="list-content">
+              <ul>
+                <li>
+                  <details>
+                    <summary>
+                      <strong>Tennis</strong> - <a href="sechedule1.html"
+                        class="coach-link">Coach Omar</a> ▼
+                    </summary>
+                    <ul>
+                      <li>Ali Ahmed</li>
+                      <li>Sara Khalid</li>
+                      <li>Yousef Abdullah</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>
+                      <strong>Swimming</strong> - <a href="sechedule2.html"
+                        class="coach-link">Coach Maha</a> ▼
+                    </summary>
+                    <ul>
+                      <li>Reem Adel</li>
+                      <li>Omar Saad</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </section>
+
+        <!-- Coaches section -->
+        <section class="dashboard-box">
+          <details>
+            <summary>
+              <img src="images/coach.png" alt="Coaches Icon"> Coaches Overview ▼
+            </summary>
+            <div class="list-content">
+              <ul>
+                <li>
+                  <details>
+                    <summary>
+                      <a href="sechedule1.html" class="coach-link">Coach Omar</a> - Tennis
+                      ▼
+                    </summary>
+                    <ul>
+                      <li>Tennis</li>
+                      <li>Football</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>
+                      <a href="sechedule2.html" class="coach-link">Coach Maha</a> -
+                      Swimming ▼
+                    </summary>
+                    <ul>
+                      <li>Swimming for beginners</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p class="copyright">&copy; TwinkerTurf, 2025. All Rights Reserved.</p>
+
+      <div class="social-media">
+        <h3>Social Media</h3>
+        <p class="linebrak"> ____________________</p>
+        <p><i class="fa-brands fa-facebook"></i> Facebook</p>
+        <p><i class="fa-brands fa-instagram"></i> Instagram</p>
+        <p><i class="fa-brands fa-x-twitter"></i> Twitter</p>
+      </div>
+
+      <p class="textfooter">
+        Let's stay in touch! Sign up for our newsletter for updates on kids'
+        sports and events!
+      </p>
+
+      <div class="logo">
+        <img src="images/logo.png" alt="TwinkerTurf Logo">
+      </div>
+
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <p class="linebrak"> ____________________</p>
+        <p><i class="fa-solid fa-phone"></i>
+          <a href="tel:+9661234567">123-4567</a>
+        </p>
+        <p><i class="fa-solid fa-envelope"></i>
+          <a href="mailto:TwinkerTurf@gmail.com">Email</a>
+        </p>
+        <p><i class="fa-solid fa-location-dot"></i> 1234, Riyadh, Saudi
+          Arabia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
