@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js" defer></script>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <title>Parent Dashboard</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-top">TwinkerTurf! Where Kids Play, Grow, and Thrive!</div>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">
+        <img src="images/logo.png" alt="TwinkerTurf Logo" style="width: 110px;">
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="Coaches.html">Coaches</a></li>
+        <li><a href="admin.html">Administrator dashboard</a></li>
+        <li><a href="ParentPage.html">Parent dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <p class="Breadcrumbs">
+      <a href="index.html">Home</a> > <a href="ParentPage.html">Parent dashboard</a>
+    </p>
+
+    <div class="parent-dashboard">
+      <h1>Welcome to Your Parent Dashboard</h1>
+      <p>Here, you can track your children's activities, monitor their progress, and enroll them in programs that match their interests and skills.</p>
+    </div>
+
+    <section class="kids-list">
+      <div class="kid-info">
+        <div class="profile-picture"></div>
+        <img src="images/Lee_se_young.jpeg" alt="parent picture">
+        <p><em>Renad Essa</em></p>
+        <p>Age: <em>35</em></p>
+        <p>Zip Code: <em>1234</em></p>
+        <p>How many Kids: <em>3</em></p>
+      </div>
+
+      <div class="kids-cards">
+        <a href="Register_a_New_Kid_Page.html" class="button-link" id="Add">Add Kids</a>
+
+        <div class="sort-container">
+          <label for="sort-kids">Sort Kids By:</label>
+          <select id="sort-kids">
+            <optgroup label="Sort by Name">
+              <option value="A-Z">A-Z</option>
+              <option value="Z-A">Z-A</option>
+            </optgroup>
+            <optgroup label="Sort by Age">
+              <option value="youngest">Youngest First</option>
+              <option value="oldest">Oldest First</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- Kid cards will be injected here dynamically -->
+      </div>
+    </section>
+
+    <div class="actions-container">
+      <div class="actions-section">
+        <div class="action-card">
+          <h2>Empowering children through activities</h2>
+          <p>Easily enroll your child in activities that match their interests and skills.</p>
+          <a href="Activity_Evaluation.html" class="button-link">Evaluate Activities</a>
+        </div>
+        <div class="action-card">
+          <h2>Your feedback matters</h2>
+          <p>Rate activities and share your thoughts to help us create better experiences.</p>
+          <a href="activity-enrollment.html" class="button-link">Enroll in Activities</a>
+        </div>
+      </div>
+      <img id="cartoon" src="images/cartoon.jpeg" alt="">
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p class="copyright">&copy; TwinkerTurf, 2025. All Rights Reserved.</p>
+      <div class="social-media">
+        <h3>Social Media</h3>
+        <p class="linebrak"> ____________________</p>
+        <p><i class="fa-brands fa-facebook"></i> Facebook</p>
+        <p><i class="fa-brands fa-instagram"></i> Instagram</p>
+        <p><i class="fa-brands fa-x-twitter"></i> Twitter</p>
+      </div>
+      <p class="textfooter">Let's stay in touch! Sign up for our newsletter for updates on kids' sports and events!</p>
+      <div class="logo">
+        <img src="images/logo.png" alt="TwinkerTurf Logo">
+      </div>
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <p class="linebrak"> ____________________</p>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+9661234567">123-4567</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:TwinkerTurf@gmail.com">Email</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> 1234, Riyadh, Saudi Arabia</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

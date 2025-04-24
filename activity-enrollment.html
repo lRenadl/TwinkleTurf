@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- English and Arabic letters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- To work on phones too -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>TwinkerTurf - Activity Enrollment</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            TwinkerTurf! Where Kids Play, Grow, and Thrive!
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">
+                <img src="images/logo.png" alt="TwinkerTurf Logo" style="width: 110px;">
+            </label>
+            <ul>
+                <li><a href="index.html" accesskey="h" title="Shortcut: Alt + H">Home</a></li>
+                <li><a href="activity.html" accesskey="a" title="Shortcut: Alt + A">Activities</a></li>
+                <li><a href="Coaches.html" accesskey="c" title="Shortcut: Alt + C">Coaches</a></li>
+                <li><a href="admin.html" accesskey="m" title="Shortcut: Alt + M">Administrator dashboard</a></li>
+                <li><a href="ParentPage.html" accesskey="p" title="Shortcut: Alt + P">Parent dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      
+    <!-- Breadcrumbs -->
+    <p class="Breadcrumbs"><a href="index.html">Home</a> > <a href="ParentPage.html">Parent dashboard</a> > <a href="activity-enrollment.html">Activity Enrollment</a></p>
+
+    <h1 class="page-title">  Activity Enrollment </h1>
+
+    <!-- ACTIVITY ENROLLMENT -->
+
+    <main>
+        
+        <!-- اختيار النشاط -->
+       <form class="enrollment-form">
+        <label for="select-Child"> <br><br> Choose the Child:</label> 
+            <select id="select-Child" name="Child" required >
+
+                <option value="" >Select a Child</option> 
+                <!-- <option value="Child1">Kayan</option>
+                <option value="Child2">Hanay</option>
+                <option value="Child3">Essa</option> -->
+            </select> 
+
+            <!-- تصنيف الأنشطة باستخدام <optgroup> -->
+            <label for="activity-filter">Filter by: </label>
+            <select id="activity-filter" >
+                <option value="" >Select a Filter</option>
+                <optgroup label="By Tutor Name">
+                    <option value="coach1">Coach Ahmed Al-Farsi</option>
+                    <option value="coach2">Coach Layla Al-Mansoor</option>
+                    <option value="coach3">Coach Maha Al-Sayed</option>
+                    <option value="coach4">Coach Omar Al-Hashim</option>
+                    <option value="coach5">Coach Yara Al-Jabri</option>
+                    <option value="coach6">Coach Fatima Al-Zahra</option>
+
+                </optgroup>
+                <optgroup label="By Objective">
+                    <option value="fitness">Fitness & Strength</option>
+                    <option value="teamwork">Teamwork & Communication</option>
+                    <option value="creativity">Creativity & Art</option>
+                </optgroup>
+                <optgroup label="By Prerequisite">
+                    <option value="beginner">Beginner Friendly</option>
+                    <option value="intermediate">Intermediate Level</option>
+                    <option value="advanced">Advanced Skills Required</option>
+                </optgroup>
+            </select>
+            <br><br><br><br>
+        <!-- الأنشطة المتاحة مع إمكانية التمرير -->
+        <section class="activitiess-container">
+            <div class="scroll-container">
+
+                <!-- جميع الأنشطة -->
+                <div class="activity-cardE">
+                    <img src="images/SWIM.jpg" alt="Swimming">
+                    <div class="rating">★★★★★</div>
+                    <h3>Swimming</h3>
+                    <p>Improve water confidence, breathing techniques, and stroke development.</p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="swimming">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/FOOT.jpg" alt="Football">
+                    <div class="rating">★★★★☆</div>
+                    <h3>Football</h3>
+                    <p>Develop agility, teamwork, and ball-handling skills with structured drills.</p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="football">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/BASKETT.jpg" alt="Basketball">
+                    <div class="rating">★★★★★</div>
+                    <h3>Basketball</h3>
+                    <p>Enhance coordination, shooting accuracy, and teamwork.<br><br></p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="basketball">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/GYM.jpg" alt="Gymnastics">
+                    <div class="rating">★★★★★</div>
+                    <h3>Gymnastics</h3>
+                    <p>Improve flexibility, strength, and balance with structured exercises.</p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="gymnastics">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/GOLFF.jpg" alt="Golf">
+                <div class="rating">★★★☆☆</div>
+                    <h3>Golf</h3>
+                    <p>Develop precision, patience, and strategic decision-making.<br><br></p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="golf">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/KARATEE.jpg" alt="Karate">
+                    <div class="rating">★★★★★</div>
+                    <h3>Karate</h3>
+                    <p>Enhance discipline, self-defense skills, and physical conditioning.<br><br></p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="karate">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/HORSEBACK.jpg" alt="Horseback Riding">
+                <div class="rating">★★★★☆</div>
+                    <h3>Horseback Riding</h3>
+                    <p>Learn horseback riding techniques and proper horse care.</p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="horseback">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/ARCHEY.jpg" alt="Archery">
+                    <div class="rating">★★★★★</div>
+                    <h3>Archery</h3>
+                    <p>Develop focus, patience, and hand-eye coordination.<br><br></p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="archery">
+                </div>
+
+                <div class="activity-cardE">
+                    <img src="images/CYCLINGG.jpg" alt="Cycling">
+                    <div class="rating">★★★★☆</div>
+                    <h3>Cycling</h3>
+                    <p>Improve endurance, balance, and road safety awareness.<br><br></p>
+                    <input type="checkbox" class="activity-checkbox" name="activity" value="cycling">
+                </div>
+
+            </div>
+        </section>
+                
+        <!-- زر التسجيل -->
+        <button class="enroll-btn">Enroll</button>
+        </form>
+    </main>
+
+
+             <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+
+            <!-- Copyright at the Top Left -->
+            <p class="copyright">&copy; TwinkerTurf, 2025. All Rights Reserved.</p>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <h3>Social Media</h3>
+                <p class="linebrak"> ____________________</p>
+                <p><i class="fa-brands fa-facebook"></i> Facebook</p>
+                <p><i class="fa-brands fa-instagram"></i> Instagram</p>
+                <p><i class="fa-brands fa-x-twitter"></i> Twitter</p>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <p class="textfooter">Let's stay in touch! Sign up for our newsletter for updates on kids' sports and events!</p>
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="TwinkerTurf Logo">
+            </div>
+
+            <!-- Contact Us Section -->
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p class="linebrak"> ____________________</p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+9661234567">123-4567</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:TwinkerTurf@gmail.com">Email</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> 1234,Riyadh,Saudi Arabia</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
